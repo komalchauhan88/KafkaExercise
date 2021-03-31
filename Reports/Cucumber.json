@@ -1,0 +1,356 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 10,
+        "name": "Verify the data has been published and saved correctly in database.",
+        "description": "",
+        "id": "verify-the-end-to-end-of-flow-of-producer-and-consumer-service-in-kafka-and-validate-the-data-against-database.;verify-the-data-has-been-published-and-saved-correctly-in-database.;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1279371155,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "consumer is running to process the data in topic devTesTask90POE",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 49
+                }
+              ],
+              "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6911704880,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user publish the message on producer in devTesTask90POE topic",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 40
+                }
+              ],
+              "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4165233,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "message should arrive in kafka",
+            "match": {
+              "location": "KafkaExercise.message_should_arrive_in_kafka()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@E2E"
+          },
+          {
+            "line": 3,
+            "name": "@ProducerConsumerMsgKeyValidation"
+          }
+        ]
+      },
+      {
+        "line": 20,
+        "name": "Verify the data has been published and saved correctly in database.",
+        "description": "",
+        "id": "verify-the-end-to-end-of-flow-of-producer-and-consumer-service-in-kafka-and-validate-the-data-against-database.;verify-the-data-has-been-published-and-saved-correctly-in-database.;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 28087414,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "consumer is running to process the data in topic devTesTask90POE",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 49
+                }
+              ],
+              "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5042818365,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user publish the message on producer in devTesTask90POE topic",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 40
+                }
+              ],
+              "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 14401312,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "message should be stored in table exercise correctly",
+            "match": {
+              "arguments": [
+                {
+                  "val": "exercise",
+                  "offset": 34
+                }
+              ],
+              "location": "KafkaExercise.message_should_be_stored_in_table_correctly(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 12,
+            "name": "@E2E"
+          },
+          {
+            "line": 12,
+            "name": "@DataValidation"
+          }
+        ]
+      },
+      {
+        "line": 31,
+        "name": "Verify the data count in the database table",
+        "description": "",
+        "id": "verify-the-end-to-end-of-flow-of-producer-and-consumer-service-in-kafka-and-validate-the-data-against-database.;verify-the-data-count-in-the-database-table;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 34718992,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "consumer is running to process the data in topic devTesTask90POE",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 49
+                }
+              ],
+              "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5457157,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "count the no of rows in the table exercise",
+            "match": {
+              "arguments": [
+                {
+                  "val": "exercise",
+                  "offset": 34
+                }
+              ],
+              "location": "KafkaExercise.count_the_no_of_rows_in_the_table(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5031342209,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "user publish the message on producer in devTesTask90POE topic",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 40
+                }
+              ],
+              "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 806969,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "row count of the table exercise should match with the updated row count",
+            "match": {
+              "arguments": [
+                {
+                  "val": "exercise",
+                  "offset": 23
+                }
+              ],
+              "location": "KafkaExercise.row_count_of_the_table_should_match_with_the_updated_row_count(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 22,
+            "name": "@RowCount"
+          },
+          {
+            "line": 22,
+            "name": "@E2E"
+          }
+        ]
+      },
+      {
+        "line": 41,
+        "name": "Verify that duplicate record are present in the database table",
+        "description": "",
+        "id": "verify-the-end-to-end-of-flow-of-producer-and-consumer-service-in-kafka-and-validate-the-data-against-database.;verify-that-duplicate-record-are-present-in-the-database-table;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 26039448,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "consumer is running to process the data in topic devTesTask90POE",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 49
+                }
+              ],
+              "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5041714220,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "user publish the message on producer in devTesTask90POE topic",
+            "match": {
+              "arguments": [
+                {
+                  "val": "devTesTask90POE",
+                  "offset": 40
+                }
+              ],
+              "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1543474,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "duplicate record should not present in the table exercise",
+            "match": {
+              "arguments": [
+                {
+                  "val": "exercise",
+                  "offset": 49
+                }
+              ],
+              "location": "KafkaExercise.duplicate_record_should_not_present_in_the_table(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 33,
+            "name": "@DuplicateRecord"
+          },
+          {
+            "line": 33,
+            "name": "@E2E"
+          }
+        ]
+      }
+    ],
+    "name": "Verify the end to end of flow of Producer and Consumer service in Kafka and validate the data against database.",
+    "description": "",
+    "id": "verify-the-end-to-end-of-flow-of-producer-and-consumer-service-in-kafka-and-validate-the-data-against-database.",
+    "keyword": "Feature",
+    "uri": "KafkaExercise.feature"
+  }
+]

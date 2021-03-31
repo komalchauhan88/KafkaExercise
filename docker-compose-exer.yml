@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg_container
+    image: bitnami/postgresql:12
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  maven:
+    container_name: bdd
+    environment:
+      POSTGRES_HOST: db
+    image: maven:3.6.3-jdk-8
+    command: mvn clean verify
+    working_dir: /tmp/KafkaExercise
+    depends_on:
+      - "db"
+      - "kafka0"
+    volumes:
+      - ".:/tmp/KafkaExercise"
+      - "$HOME/.m2:/root/.m2"
+volumes:
+  pg_data:
