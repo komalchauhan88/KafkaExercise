@@ -111,7 +111,7 @@ formatter.match({
   "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
 });
 formatter.result({
-  "duration": 1279371155,
+  "duration": 1668912529,
   "status": "passed"
 });
 formatter.match({
@@ -124,14 +124,14 @@ formatter.match({
   "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
 });
 formatter.result({
-  "duration": 6911704880,
+  "duration": 7867256228,
   "status": "passed"
 });
 formatter.match({
   "location": "KafkaExercise.message_should_arrive_in_kafka()"
 });
 formatter.result({
-  "duration": 4165233,
+  "duration": 4532069,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -244,7 +244,7 @@ formatter.match({
   "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
 });
 formatter.result({
-  "duration": 28087414,
+  "duration": 25542211,
   "status": "passed"
 });
 formatter.match({
@@ -257,7 +257,7 @@ formatter.match({
   "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
 });
 formatter.result({
-  "duration": 5042818365,
+  "duration": 5068119640,
   "status": "passed"
 });
 formatter.match({
@@ -270,7 +270,7 @@ formatter.match({
   "location": "KafkaExercise.message_should_be_stored_in_table_correctly(String)"
 });
 formatter.result({
-  "duration": 14401312,
+  "duration": 16653685,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -396,7 +396,7 @@ formatter.match({
   "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
 });
 formatter.result({
-  "duration": 34718992,
+  "duration": 21304356,
   "status": "passed"
 });
 formatter.match({
@@ -409,7 +409,7 @@ formatter.match({
   "location": "KafkaExercise.count_the_no_of_rows_in_the_table(String)"
 });
 formatter.result({
-  "duration": 5457157,
+  "duration": 3974590,
   "status": "passed"
 });
 formatter.match({
@@ -422,7 +422,7 @@ formatter.match({
   "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
 });
 formatter.result({
-  "duration": 5031342209,
+  "duration": 5031878130,
   "status": "passed"
 });
 formatter.match({
@@ -435,7 +435,7 @@ formatter.match({
   "location": "KafkaExercise.row_count_of_the_table_should_match_with_the_updated_row_count(String)"
 });
 formatter.result({
-  "duration": 806969,
+  "duration": 1048300,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -548,7 +548,7 @@ formatter.match({
   "location": "KafkaExercise.consumer_is_running_to_process_the_data_in_topic(String)"
 });
 formatter.result({
-  "duration": 26039448,
+  "duration": 27095602,
   "status": "passed"
 });
 formatter.match({
@@ -561,7 +561,7 @@ formatter.match({
   "location": "KafkaExercise.user_publish_the_message_on_producer_in_topic(String)"
 });
 formatter.result({
-  "duration": 5041714220,
+  "duration": 5038019194,
   "status": "passed"
 });
 formatter.match({
@@ -574,7 +574,7 @@ formatter.match({
   "location": "KafkaExercise.duplicate_record_should_not_present_in_the_table(String)"
 });
 formatter.result({
-  "duration": 1543474,
+  "duration": 1466879,
   "status": "passed"
 });
 });
