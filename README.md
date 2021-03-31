@@ -1,6 +1,6 @@
 # Kafka-Exercise-SDET
 
-Kafka-Exercise-SDET project is written in Java language that create a messaging system build on Kafka in which a producer publishes the message in the format of {id, message} and consumer read it. Message is persisted in the PostGres DB in 'exercise' table in 'test_db' database. Secondly, to verify the communication, BDD test framework is written that verify the completeness and correctness of the message flow from producer to consumer and then DB. Kafka system and test framework is dockerized suing the docker-composer.
+Kafka-Exercise-SDET is a Java project that create a messaging system build on Kafka in which a producer publishes the message in the format of {id, message} and consumer reads it. Message persist in the Postgres DB in 'exercise' table in 'test_db' database. Secondly, to verify the communication, BDD test framework is written that verify the completeness and correctness of the message flow from producer to consumer and then DB. Kafka system and test framework is dockerized using the docker-composer.
 
 ## Tools Used:
 
