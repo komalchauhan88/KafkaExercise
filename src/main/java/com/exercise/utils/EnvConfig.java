@@ -8,7 +8,7 @@ import java.util.Properties;
 public class EnvConfig {
 
     @SneakyThrows
-    public static String configValues(String key)  {
+    public static String configValues(String key) {
 
         Properties prop = new Properties();
         FileInputStream inputFileStream = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//applicationConfig.properties");

@@ -1,3 +1,9 @@
+/**
+ * Steps Definitions of the Integration Tests
+ *
+ * @author Komal Kumar
+ */
+
 package com.exercise.stepDefinitions;
 
 import com.exercise.kafka.SampleConsumer;
@@ -12,7 +18,6 @@ import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,13 +34,12 @@ public class KafkaExercise {
     SampleConsumer consumer = new SampleConsumer();
     DBUtils dbUtils = new DBUtils();
     ArrayList<String> sampleMessage = new ArrayList<>();
-    ExecutorService executorService = Executors.newFixedThreadPool(5);
+    public static ExecutorService executorService = Executors.newFixedThreadPool(5);
 
     int currentRowCount;
 
     public KafkaExercise() throws SQLException {
     }
-
 
     @Given("^consumer is running to process the data in topic (.+)$")
     public void consumer_is_running_to_process_the_data_in_topic(String topic) throws Throwable {
@@ -46,6 +50,7 @@ public class KafkaExercise {
             }
         };
         executorService.execute(consumerThread);
+
     }
 
     @When("^user publish the message on producer in (.+) topic$")
@@ -60,6 +65,7 @@ public class KafkaExercise {
         sampleMessage.add(String.valueOf(id));
         sampleMessage.add(message);
         logger.info("sampleMessageList: " + sampleMessage);
+        System.out.println("sampleMessageList: " + sampleMessage);
     }
 
     @Given("^message should be stored in table (.+) correctly$")
@@ -67,11 +73,10 @@ public class KafkaExercise {
 
         ResultSet resultSet = dbUtils.selectPostGresTable(tableName, "id", sampleMessage.get(0));
         while (resultSet.next()) {
-            System.out.println("ID: " + resultSet.getString(1) + "Message: " + resultSet.getString(2));
+            System.out.println("ID: " + resultSet.getString(1) + "; Message: " + resultSet.getString(2));
             Assert.assertEquals("ID is matching: ", sampleMessage.get(0), resultSet.getString(1));
             Assert.assertEquals("Message value is matching: ", sampleMessage.get(1), resultSet.getString(2));
         }
-
     }
 
     @And("^count the no of rows in the table (.+)$")
@@ -79,6 +84,7 @@ public class KafkaExercise {
 
         currentRowCount = dbUtils.countPostGresTable(tableName);
         logger.info("Initial Row Count: " + currentRowCount);
+        System.out.println("Initial Row Count: " + currentRowCount);
 
     }
 
@@ -87,6 +93,7 @@ public class KafkaExercise {
 
         int updatedRowCount = dbUtils.countPostGresTable(tableName);
         logger.info("Update Row Count: " + updatedRowCount);
+        System.out.println("Update Row Count: " + updatedRowCount);
 
         Assert.assertEquals("Updated row count is matching.", currentRowCount + 1, updatedRowCount);
 
@@ -96,7 +103,8 @@ public class KafkaExercise {
     public void message_should_arrive_in_kafka() throws Throwable {
 
         MessageMapping msgMapping = MessageMapping.getInstance();
-        logger.info("Producer Key: " + msgMapping.getProducerKey() + "Consumer Key: " + msgMapping.getProducerKey());
+        logger.info("Producer Key: " + msgMapping.getProducerKey() + "; Consumer Key: " + msgMapping.getProducerKey());
+        System.out.println("Producer Key: " + msgMapping.getProducerKey() + "; Consumer Key: " + msgMapping.getProducerKey());
 
         Assert.assertTrue(msgMapping.getProducerKey() != null && msgMapping.getConsumerKey() != null &&
                 msgMapping.getProducerKey().equals(msgMapping.getConsumerKey()));
@@ -107,6 +115,7 @@ public class KafkaExercise {
 
         int distinctRowCount = dbUtils.countDuplicateRecord(tableName, sampleMessage.get(0));
         logger.info("Row Count: " + distinctRowCount);
+        System.out.println("Row Count: " + distinctRowCount);
 
         Assert.assertEquals("Row count is should not more than 1. ", 1, distinctRowCount);
     }

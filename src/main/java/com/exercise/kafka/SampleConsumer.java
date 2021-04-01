@@ -1,3 +1,9 @@
+/**
+ * Contains method for Consumer
+ *
+ * @author Komal Kumar
+ */
+
 package com.exercise.kafka;
 
 import com.exercise.entities.SampleMessage;
@@ -32,6 +38,10 @@ public class SampleConsumer {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, EnvConfig.configValues("bootstrap_servers_config"));
     }
 
+    /**
+     * Consumer Method to read the message and write to DB
+     * @param topic - Topic name
+     */
     public void consumeAndPersist(String topic) {
         final Consumer<String, String> consumer = new KafkaConsumer<String, String>(props);
         consumer.subscribe(Arrays.asList(topic));
@@ -54,6 +64,11 @@ public class SampleConsumer {
         }
     }
 
+    /**
+     * Method to write the message into table
+     * @param id - Message ID
+     * @param msg - Message string
+     */
     public void writeToDb(long id, String msg) {
 
         String insertStmt = "INSERT INTO exercise (id,message) VALUES(?,?)";
@@ -67,6 +82,5 @@ public class SampleConsumer {
         }
 
     }
-
 
 }

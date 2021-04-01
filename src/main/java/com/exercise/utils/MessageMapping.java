@@ -8,10 +8,12 @@ public class MessageMapping {
     private String producerKey;
     private String consumerKey;
 
-    private MessageMapping(){}
-    public static MessageMapping getInstance(){
-        if( INSTANCE==null ){
-            INSTANCE=new MessageMapping();
+    private MessageMapping() {
+    }
+
+    public static MessageMapping getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new MessageMapping();
         }
         return INSTANCE;
     }
